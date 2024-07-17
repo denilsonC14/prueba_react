@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Typed from 'react-typed';
+import Modal from './Modal';
 
 const Hero = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleModalOpen = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleModalClose = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div className='text-white'>
       <div className='max-w-[800px] mt-[-96px] w-full h-screen mx-auto text-center flex flex-col justify-center'>
@@ -24,10 +35,17 @@ const Hero = () => {
           />
         </div>
         <p className='md:text-2xl text-xl font-bold text-gray-500'>Monitor your data analytics to increase revenue for BTB, BTC, & SASS platforms.</p>
-        <button className='bg-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto py-3 text-black'>Get Started</button>
+        <button
+          className='bg-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto py-3 text-black'
+          onClick={handleModalOpen}
+        >
+         Start Modal
+        </button>
       </div>
+      <Modal isOpen={isModalOpen} onClose={handleModalClose} />
     </div>
   );
 };
 
 export default Hero;
+
