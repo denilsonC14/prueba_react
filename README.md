@@ -6,6 +6,9 @@ Este proyecto se inició con Create React App .
 
 En el directorio del proyecto, puedes ejecutar:
 
+## instalar dependencias
+npm install --legacy-peer-deps
+
 ### `npm start`
 
 Ejecuta la aplicación en modo de desarrollo.
